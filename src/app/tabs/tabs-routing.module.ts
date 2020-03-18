@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {CardListComponent} from '../card/components/card-list.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../card/card.module#CardPageModule'
+            // loadChildren: '../card/card.module#CardPageModule'
+            loadChildren: () =>
+                import('../card/card.module').then(m => m.CardPageModule)
           }
         ]
       },
