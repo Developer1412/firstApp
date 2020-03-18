@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {CardService} from './shared/card.service';
 import {HttpClientModule} from '@angular/common/http';
 import {CardListComponent} from './components/card-list.component';
+import {CardListingPage} from './card-listing/card-listing.page';
 
 @NgModule({
     imports : [

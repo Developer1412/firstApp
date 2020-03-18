@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import {CardListComponent} from '../card/components/card-list.component';
+import {CardListingPage} from '../card/card-listing/card-listing.page';
 
 const routes: Routes = [
   {
@@ -16,6 +17,15 @@ const routes: Routes = [
             // loadChildren: '../card/card.module#CardPageModule'
             loadChildren: () =>
                 import('../card/card.module').then(m => m.CardPageModule)
+          }
+        ]
+      },
+      {
+        path: 'card/:cardDeckGroup/:cardDeck',
+        children: [
+          {
+            path: '',
+            component: CardListingPage
           }
         ]
       },
