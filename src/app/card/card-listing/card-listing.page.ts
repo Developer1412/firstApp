@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import {CardService} from '../shared/card.service';
 
 @Component({
     selector: 'app-card-listing',
@@ -11,10 +12,16 @@ export class CardListingPage {
 
     cardDeckGroup: string;
     cardDeck: string;
-    constructor(private route: ActivatedRoute) {}
+    cards: any[] = [];
+    constructor(private route: ActivatedRoute,
+                private cardService: CardService) {}
 
     ionViewWillEnter() {
         this.cardDeckGroup = this.route.snapshot.paramMap.get('cardDeckGroup');
         this.cardDeck = this.route.snapshot.paramMap.get('cardDeck');
+        this.cardService.getCardsByDeck(this.cardDeckGroup, this.cardDeck).subscribe(
+            (cards) => {
+                this.cards = cards;
+            });
     }
 }

@@ -5,14 +5,17 @@ import {CardDeck} from './card.model';
 
 @Injectable()
 export class CardService {
-    public readonly cardDecks: string[] = ['Druid', 'Mage', 'Warrior', 'Rogue', 'Shaman', 'Priest', 'Warlock', 'Hunter', 'Paladin'];
-
     private readonly HS_API_URL = 'https://omgvamp-hearthstone-v1.p.rapidapi.com';
     private readonly API_KEY = '8b275b4addmshb79c27c8440c22cp189a6bjsn0a28721f03e3';
-
-    constructor(private http: HttpClient) {}
+    private headers: HttpHeaders;
+    constructor(private http: HttpClient) {
+        this.headers = new HttpHeaders({'x-rapidapi-key': this.API_KEY});
+    }
     public getAllCards(): Observable<CardDeck[]> {
-        const headers = new HttpHeaders({'x-rapidapi-key': this.API_KEY});
-        return this.http.get<CardDeck[]>(`${this.HS_API_URL}/info`,{headers});
+        return this.http.get<CardDeck[]>(`${this.HS_API_URL}/info`,{headers: this.headers});
+    }
+
+    public getCardsByDeck(cardDeckGroup: string, cardDeck: string): Observable<any> {
+        return this.http.get<any>(`${this.HS_API_URL}/cards/${cardDeckGroup}/${cardDeck}`, {headers: this.headers});
     }
 }
