@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            {{card?.name}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="card && card.cardId">
+    <ion-card>
+        <img [src]="card.img" >
+        <ion-card-content>
+            <ion-card-title>
+                {{card?.cardSet}}
+            </ion-card-title>
+            <p>{{card?.type}}</p>
+            <p>{{card?.faction}}</p>
+            <ion-card-title>
+                Status
+            </ion-card-title>
+            <p *ngIf="card.cost"><b>Cost: </b>{{card.cost}}</p>
+            <p *ngIf="card.attack"><b>Attack: </b>{{card.attack}}</p>
+            <p *ngIf="card.health"><b>Health: </b>{{card.health}}</p>
+            <p *ngIf="card.rarity"><b>Rarity: </b>{{card.rarity}}</p>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

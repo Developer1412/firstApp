@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import {CardListComponent} from '../card/components/card-list.component';
 import {CardListingPage} from '../card/card-listing/card-listing.page';
+import {CardDetailPage} from '../card/card-detail/card-detail.page';
 
 const routes: Routes = [
   {
@@ -26,6 +27,15 @@ const routes: Routes = [
           {
             path: '',
             component: CardListingPage
+          }
+        ]
+      },
+      {
+        path: 'card/:cardId',
+        children: [
+          {
+            path: '',
+            component: CardDetailPage
           }
         ]
       },

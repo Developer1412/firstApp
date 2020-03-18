@@ -9,6 +9,7 @@ import { TabsPage } from './tabs.page';
 import {CardListingPage} from '../card/card-listing/card-listing.page';
 import {CardService} from '../card/shared/card.service';
 import {HttpClient} from '@angular/common/http';
+import {CardDetailPage} from '../card/card-detail/card-detail.page';
 
 // @ts-ignore
 @NgModule({
@@ -22,6 +23,6 @@ import {HttpClient} from '@angular/common/http';
     CardService,
     HttpClient
   ],
-  declarations: [TabsPage, CardListingPage]
+  declarations: [TabsPage, CardListingPage, CardDetailPage]
 })
 export class TabsPageModule {}
