@@ -12,6 +12,8 @@ import {ToastService} from '../../shared/service/toast.service';
 
 export class CardDetailPage {
     cardId: string;
+    // cardDeckGroup: string;
+    // cardDeck: string;
     card: Card;
     constructor(private route: ActivatedRoute,
                 private cardService: CardService,
@@ -19,6 +21,8 @@ export class CardDetailPage {
                 private toaster: ToastService) {}
     ionViewWillEnter(){
         this.cardId = this.route.snapshot.paramMap.get('cardId');
+        // this.cardDeckGroup = this.route.snapshot.paramMap.get('cardDeckGroup');
+        // this.cardDeck = this.route.snapshot.paramMap.get('cardDeck');
         this.loaderService.presentLoading();
         this.cardService.getCardById(this.cardId).subscribe(
             (cards: Card[]) => {
@@ -30,8 +34,8 @@ export class CardDetailPage {
             });
     }
 
-    // updateImage($event: any) {
-    //     this.card.img = 'assets/image/DefaultCard.png';
-    // }
+    updateImage($event: any) {
+        this.card.img = '../../../assets/images/DefaultCard.png';
+    }
 
 }

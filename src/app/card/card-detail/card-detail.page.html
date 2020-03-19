@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content *ngIf="card && card.cardId">
     <ion-card>
-        <img [src]="card.img" >
+        <img [src]="card.img" (error)="updateImage($event)" >
         <ion-card-content>
             <ion-card-title>
                 {{card?.cardSet}}
