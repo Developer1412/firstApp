@@ -9,6 +9,12 @@
     </ion-toolbar>
 </ion-header>
 <ion-content padding>
+    <app-search [items]="copyOfCards"
+                (searchCompleted)="hydrateCards($event)"
+                [filteredProperty]="'name'"
+                (searchStarted)="handleSearch($event)">
+    </app-search>
+    <ion-spinner text-center *ngIf="isLoading"></ion-spinner>
     <ion-list *ngIf="cards.length > 0">
         <ion-card *ngFor="let card of cards">
             <ion-card-header text-wrap>

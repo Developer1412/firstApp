@@ -10,6 +10,7 @@ import {CardListingPage} from '../card/card-listing/card-listing.page';
 import {CardService} from '../card/shared/card.service';
 import {HttpClient} from '@angular/common/http';
 import {CardDetailPage} from '../card/card-detail/card-detail.page';
+import {SearchComponent} from '../shared/components/search/search.component';
 
 // @ts-ignore
 @NgModule({
@@ -23,6 +24,6 @@ import {CardDetailPage} from '../card/card-detail/card-detail.page';
     CardService,
     HttpClient
   ],
-  declarations: [TabsPage, CardListingPage, CardDetailPage]
+  declarations: [TabsPage, CardListingPage, CardDetailPage, SearchComponent]
 })
 export class TabsPageModule {}
