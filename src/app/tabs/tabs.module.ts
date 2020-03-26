@@ -11,6 +11,7 @@ import {CardService} from '../card/shared/card.service';
 import {HttpClient} from '@angular/common/http';
 import {CardDetailPage} from '../card/card-detail/card-detail.page';
 import {SearchComponent} from '../shared/components/search/search.component';
+import {FavoriteCardStore} from '../card/shared/card-favorite.store';
 
 // @ts-ignore
 @NgModule({
@@ -22,7 +23,8 @@ import {SearchComponent} from '../shared/components/search/search.component';
   ],
   providers : [
     CardService,
-    HttpClient
+    HttpClient,
+    FavoriteCardStore
   ],
   declarations: [TabsPage, CardListingPage, CardDetailPage, SearchComponent]
 })

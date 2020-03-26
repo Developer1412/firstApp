@@ -8,7 +8,6 @@ import {CardService} from './shared/card.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CardListComponent} from './components/card-list.component';
 
-// @ts-ignore
 @NgModule({
     imports : [
         IonicModule,

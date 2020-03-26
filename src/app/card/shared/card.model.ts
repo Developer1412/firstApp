@@ -18,4 +18,5 @@ export interface Card {
     faction: string;
     playerClass: string;
     locale: string;
+    favorite: boolean;
 }
