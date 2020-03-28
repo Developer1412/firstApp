@@ -12,6 +12,7 @@ import {HttpClient} from '@angular/common/http';
 import {CardDetailPage} from '../card/card-detail/card-detail.page';
 import {SearchComponent} from '../shared/components/search/search.component';
 import {FavoriteCardStore} from '../card/shared/card-favorite.store';
+import {CardFavoritePage} from '../card/card-favorite/card-favorite.page';
 
 // @ts-ignore
 @NgModule({
@@ -26,6 +27,6 @@ import {FavoriteCardStore} from '../card/shared/card-favorite.store';
     HttpClient,
     FavoriteCardStore
   ],
-  declarations: [TabsPage, CardListingPage, CardDetailPage, SearchComponent]
+  declarations: [TabsPage, CardListingPage, CardDetailPage, SearchComponent, CardFavoritePage]
 })
 export class TabsPageModule {}

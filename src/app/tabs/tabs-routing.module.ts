@@ -4,6 +4,7 @@ import { TabsPage } from './tabs.page';
 import {CardListComponent} from '../card/components/card-list.component';
 import {CardListingPage} from '../card/card-listing/card-listing.page';
 import {CardDetailPage} from '../card/card-detail/card-detail.page';
+import {CardFavoritePage} from '../card/card-favorite/card-favorite.page';
 
 const routes: Routes = [
   {
@@ -40,12 +41,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'favorite',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+            component: CardFavoritePage
           }
         ]
       },

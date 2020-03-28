@@ -29,7 +29,7 @@ export class FavoriteCardStore {
             card.favorite = false;
             delete favoriteCards[card.cardId];
         }
-        this.storage.set('favoriteCards', this.favoriteCards).then(() => {
+        this.storage.set('favoriteCards', favoriteCards).then(() => {
             this.favoriteCardsSubject.next(favoriteCards);
         });
     }
